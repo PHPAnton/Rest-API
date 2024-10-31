@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <style>
+        .user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-online {
+            background-color: green;
+        }
+
+        .status-offline {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Список пользователей</h1>
+    <div id="userList"></div>
+
+    <script>
+        // Функция для загрузки списка пользователей
+        async function loadUsers() {
+            try {
+                const response = await fetch('/api/users'); // Запрос к API для получения списка пользователей
+                const users = await response.json();
+
+                const userList = document.getElementById('userList');
+                userList.innerHTML = ''; // Очистка списка перед добавлением пользователей
+
+                users.forEach(user => {
+                    const userDiv = document.createElement('div');
+                    userDiv.classList.add('user');
+
+                    // Создание индикатора статуса
+                    const statusIndicator = document.createElement('div');
+                    statusIndicator.classList.add('status-indicator');
+                    statusIndicator.classList.add(user.isOnline ? 'status-online' : 'status-offline');
+
+                    const userName = document.createElement('span');
+                    userName.textContent = user.name;
+
+                    userDiv.appendChild(statusIndicator);
+                    userDiv.appendChild(userName);
+                    userList.appendChild(userDiv);
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки пользователей:', error);
+            }
+        }
+
+        // Загружаем список пользователей при загрузке страницы
+        loadUsers();
+
+        // Опционально: периодическое обновление списка
+        setInterval(loadUsers, 5000); // Обновление каждые 5 секунд
+    </script>
+</body>
+</html>

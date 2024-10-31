@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "8vyGqSNP6zefaXuqHJd7Aqu0989akqIncPeIiNS/TCk=",
+  "Source": "UserManagementAPI",
+  "BasePath": "_content/UserManagementAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "UserManagementAPI\\wwwroot",
+      "Source": "UserManagementAPI",
+      "ContentRoot": "C:\\Users\\gamem\\source\\repos\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\gamem\\source\\repos\\UserManagementAPI\\UserManagementAPI\\wwwroot\\index.html",
+      "SourceId": "UserManagementAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gamem\\source\\repos\\UserManagementAPI\\UserManagementAPI\\wwwroot\\",
+      "BasePath": "_content/UserManagementAPI",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
